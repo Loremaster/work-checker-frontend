@@ -4,8 +4,10 @@ module.exports = {
     "^.+\\.vue$": "vue-jest",
     ".+\\.(css|styl|less|sass|scss|svg|png|jpg|ttf|woff|woff2)$":
       "jest-transform-stub",
-    "^.+\\.tsx?$": "ts-jest"
+    "^.+\\.tsx?$": "ts-jest",
+    "^.+\\.jsx?$": "babel-jest"
   },
+  transformIgnorePatterns: ["node_modules/(?!(vuetify)/)"],
   moduleNameMapper: {
     "^@/(.*)$": "<rootDir>/src/$1"
   },
@@ -18,5 +20,6 @@ module.exports = {
     "ts-jest": {
       babelConfig: true
     }
-  }
+  },
+  setupFiles: ["./tests/jest-setup.ts"]
 };
