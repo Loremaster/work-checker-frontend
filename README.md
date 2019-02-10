@@ -27,12 +27,12 @@ yarn run lint
 
 ### Run your end-to-end tests
 ```
-yarn run test:e2e
+yarn test:e2e --headless
 ```
 
 ### Run your unit tests
 ```
-yarn run test:unit
+yarn test:unit
 ```
 
 ### Customize configuration
