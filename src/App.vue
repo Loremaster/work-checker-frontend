@@ -11,7 +11,7 @@
         <v-icon>open_in_new</v-icon>
       </v-btn>
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/signin">Sign in</router-link>
     </v-toolbar>
 
     <v-content>
