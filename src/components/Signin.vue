@@ -1,5 +1,20 @@
 <template>
-  <p>Signin widget</p>
+  <v-card class="elevation-12">
+    <v-toolbar dark color="primary">
+      <v-toolbar-title>Login form</v-toolbar-title>
+      <v-spacer />
+    </v-toolbar>
+    <v-card-text>
+      <v-form>
+        <v-text-field prepend-icon="person" name="email" label="Email" type="email" />
+        <v-text-field id="password" prepend-icon="lock" name="password" label="Password" type="password" />
+      </v-form>
+    </v-card-text>
+    <v-card-actions>
+      <v-spacer />
+      <v-btn color="primary">Login</v-btn>
+    </v-card-actions>
+  </v-card>
 </template>
 
 <script lang="ts">
