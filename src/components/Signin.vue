@@ -19,23 +19,37 @@
     </v-card-text>
     <v-card-actions>
       <v-spacer />
-      <v-btn color="primary" @click="signin">Login</v-btn>
+      <v-btn color="primary" @click="login" :disabled="disabled">Login</v-btn>
     </v-card-actions>
   </v-card>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import api from "@/apis/authentication";
+import { Action } from "vuex-class";
 
 @Component
 export default class Signin extends Vue {
   email: string = "";
   password: string = "";
+  disabled: boolean = false;
 
-  async signin() {
-    const response = await api.signin({ email: this.email, password: this.password });
-    localStorage.setItem("token", response.data.jwt);
+  @Action("authenticate") authenticate: any;
+
+  async login() {
+    try {
+      this.disabled = true;
+      await this.authenticate({ email: this.email, password: this.password });
+      this.$router.push("/");
+    } catch (e) {
+      this.$notify({
+        type: "error",
+        title: "Authentication",
+        text: "Can't sign in. Please make sure your login and password are correct",
+      });
+    } finally {
+      this.disabled = false;
+    }
   }
 }
 </script>
