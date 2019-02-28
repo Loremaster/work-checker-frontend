@@ -8,7 +8,7 @@ import getters from "@/getters";
 Vue.use(Vuex);
 
 export const initialState: IStore = {
-  token: localStorage.getItem("token"),
+  token: null,
   error: null,
 };
 

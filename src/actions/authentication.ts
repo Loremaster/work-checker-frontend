@@ -20,6 +20,12 @@ const authenticate = async (
   }
 };
 
+const fetchToken = ({ commit }: { commit: Commit }) => {
+  const token = localStorage.getItem("token");
+  commit("setToken", token);
+};
+
 export default {
   authenticate,
+  fetchToken,
 };

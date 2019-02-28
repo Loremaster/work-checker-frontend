@@ -67,3 +67,13 @@ describe("authenticate", () => {
     });
   });
 });
+
+describe("fetchToken", () => {
+  it("calls local storage to set token", () => {
+    const token = "token value";
+    localStorage.setItem("token", token);
+    actions.fetchToken({ commit });
+
+    expect(commit).toHaveBeenCalledWith("setToken", token);
+  });
+});
