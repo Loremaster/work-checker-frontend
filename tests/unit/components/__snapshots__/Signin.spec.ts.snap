@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Signin.vue renders correctly 1`] = `
+<div class="elevation-12 v-card v-sheet theme--light">
+  <nav class="v-toolbar theme--dark primary" style="margin-top: 0px; padding-right: 0px; padding-left: 0px; transform: translateY(0px);">
+    <div class="v-toolbar__content" style="height: 64px;">
+      <div class="v-toolbar__title">Login form</div>
+      <div class="spacer"></div>
+    </div>
+  </nav>
+  <div class="v-card__text">
+    <form novalidate="novalidate" class="v-form">
+      <div class="v-input v-text-field theme--light">
+        <div class="v-input__prepend-outer">
+          <div class="v-input__icon v-input__icon--prepend"><i aria-hidden="true" class="v-icon material-icons theme--light">person</i></div>
+        </div>
+        <div class="v-input__control">
+          <div class="v-input__slot">
+            <div class="v-text-field__slot"><label aria-hidden="true" class="v-label theme--light" style="left: 0px; position: absolute;">Email</label><input aria-label="Email" name="email" type="email"></div>
+          </div>
+          <div class="v-text-field__details">
+            <div class="v-messages theme--light">
+              <div class="v-messages__wrapper"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="v-input v-text-field theme--light">
+        <div class="v-input__prepend-outer">
+          <div class="v-input__icon v-input__icon--prepend"><i aria-hidden="true" class="v-icon material-icons theme--light">lock</i></div>
+        </div>
+        <div class="v-input__control">
+          <div class="v-input__slot">
+            <div class="v-text-field__slot"><label aria-hidden="true" class="v-label theme--light" style="left: 0px; position: absolute;">Password</label><input aria-label="Password" name="password" type="password"></div>
+          </div>
+          <div class="v-text-field__details">
+            <div class="v-messages theme--light">
+              <div class="v-messages__wrapper"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="v-card__actions">
+    <div class="spacer"></div> <button type="button" class="submit v-btn theme--light primary">
+      <div class="v-btn__content">Login</div>
+    </button>
+  </div>
+</div>
+`;
