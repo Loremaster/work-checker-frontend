@@ -10,15 +10,19 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "@types/node": "^11.9.4",
+    "axios": "^0.18.0",
     "material-design-icons-iconfont": "^3.0.3",
     "register-service-worker": "^1.5.2",
     "roboto-fontface": "*",
     "vue": "^2.5.22",
     "vue-class-component": "^6.0.0",
+    "vue-notification": "^1.3.16",
     "vue-property-decorator": "^7.0.0",
     "vue-router": "^3.0.1",
     "vuetify": "^1.3.0",
-    "vuex": "^3.0.1"
+    "vuex": "^3.0.1",
+    "vuex-class": "^0.3.1"
   },
   "devDependencies": {
     "@types/jest": "^23.1.4",
@@ -31,12 +35,14 @@
     "@vue/cli-service": "^3.4.0",
     "@vue/eslint-config-prettier": "^4.0.1",
     "@vue/eslint-config-typescript": "^4.0.0",
-    "@vue/test-utils": "^1.0.0-beta.20",
+    "@vue/test-utils": "^1.0.0-beta.29",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
     "fibers": "^3.1.1",
+    "flush-promises": "^1.0.2",
+    "jest-localstorage-mock": "^2.4.0",
     "lint-staged": "^8.1.0",
     "sass": "^1.16.0",
     "sass-loader": "^7.1.0",
