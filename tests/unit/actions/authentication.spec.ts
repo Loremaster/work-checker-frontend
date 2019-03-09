@@ -69,11 +69,24 @@ describe("authenticate", () => {
 });
 
 describe("fetchToken", () => {
-  it("calls local storage to set token", () => {
+  it("calls mutation to set token", () => {
     const token = "token value";
     localStorage.setItem("token", token);
+
     actions.fetchToken({ commit });
 
     expect(commit).toHaveBeenCalledWith("setToken", token);
+  });
+});
+
+describe("signOut", () => {
+  it("calls mutation to remove token", () => {
+    actions.signOut({ commit });
+    expect(localStorage.removeItem).toHaveBeenLastCalledWith("token");
+  });
+
+  it("calls mutation to remove token", () => {
+    actions.signOut({ commit });
+    expect(commit).toHaveBeenCalledWith("setToken", null);
   });
 });

@@ -6,8 +6,9 @@
         <span class="font-weight-light">MATERIAL DESIGN</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/signin">Sign in</router-link>
+      <v-btn to="/">Home</v-btn> |
+      <v-btn v-if="!token" to="/signin">Sign in</v-btn>
+      <v-btn v-else @click="signOut">Sign out</v-btn>
     </v-toolbar>
 
     <v-content>
@@ -19,11 +20,13 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { Action } from "vuex-class";
+import { Action, Getter } from "vuex-class";
 
 @Component
 export default class App extends Vue {
   @Action("fetchToken") fetchToken: any;
+  @Action("signOut") signOut: any;
+  @Getter("token") token!: string | null;
 
   created() {
     this.fetchToken(); // set store value after refresh
