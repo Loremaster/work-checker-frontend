@@ -1,16 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App.vue renders correctly 1`] = `
-<v-app-stub id="app">
-  <v-toolbar-stub app="true" scrollthreshold="300">
-    <v-toolbar-title-stub class="headline text-uppercase"><span>Vuetify</span> <span class="font-weight-light">MATERIAL DESIGN</span></v-toolbar-title-stub>
-    <v-spacer-stub></v-spacer-stub>
-    <router-link-stub to="/" tag="a" event="click">Home</router-link-stub> |
-    <router-link-stub to="/signin" tag="a" event="click">Sign in</router-link-stub>
-  </v-toolbar-stub>
-  <v-content-stub tag="main">
-    <notifications-stub></notifications-stub>
-    <router-view-stub name="default"></router-view-stub>
-  </v-content-stub>
-</v-app-stub>
+<div data-app="true" class="application theme--light" id="app">
+  <div class="application--wrap">
+    <nav class="v-toolbar v-toolbar--fixed theme--light" style="margin-top: 0px; padding-right: 0px; padding-left: 0px; transform: translateY(0px);">
+      <div class="v-toolbar__content" style="height: 64px;">
+        <div class="v-toolbar__title headline text-uppercase"><span>Vuetify</span> <span class="font-weight-light">MATERIAL DESIGN</span></div>
+        <div class="spacer"></div>
+        <router-link-stub class="v-btn v-btn--router theme--light">
+          <div class="v-btn__content">Home</div>
+        </router-link-stub> |
+        <router-link-stub class="v-btn v-btn--router theme--light">
+          <div class="v-btn__content">Sign in</div>
+        </router-link-stub>
+      </div>
+    </nav>
+    <main class="v-content" style="padding: 64px 0px 0px 0px;">
+      <div class="v-content__wrap">
+        <notifications-stub></notifications-stub>
+        <router-view-stub></router-view-stub>
+      </div>
+    </main>
+  </div>
+</div>
 `;

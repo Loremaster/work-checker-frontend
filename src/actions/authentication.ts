@@ -25,7 +25,13 @@ const fetchToken = ({ commit }: { commit: Commit }) => {
   commit("setToken", token);
 };
 
+const signOut = ({ commit }: { commit: Commit }) => {
+  localStorage.removeItem("token");
+  commit("setToken", null);
+};
+
 export default {
   authenticate,
   fetchToken,
+  signOut,
 };
