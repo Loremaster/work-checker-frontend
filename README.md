@@ -1,5 +1,7 @@
 # work-checker-frontend
 
+[![CircleCI](https://circleci.com/gh/Loremaster/work-checker-frontend/tree/master.svg?style=svg)](https://circleci.com/gh/Loremaster/work-checker-frontend/tree/master)
+
 ## Project setup
 ```
 yarn install
