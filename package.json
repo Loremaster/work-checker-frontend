@@ -10,6 +10,11 @@
     "test:unit": "vue-cli-service test:unit",
     "start": "node server.js"
   },
+  "engines": {
+    "node": "11.6.0",
+    "npm": "5.6.0",
+    "yarn": "1.12.3"
+  },
   "dependencies": {
     "@types/node": "^11.9.4",
     "axios": "^0.18.0",
