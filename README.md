@@ -1,4 +1,4 @@
-# work-checker-frontend
+# Work checker frontend
 
 [![CircleCI](https://circleci.com/gh/Loremaster/work-checker-frontend/tree/master.svg?style=svg)](https://circleci.com/gh/Loremaster/work-checker-frontend/tree/master)
 
