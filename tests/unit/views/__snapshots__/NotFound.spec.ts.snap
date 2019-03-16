@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Authentication.vue renders correctly 1`] = `
+<div class="container grid-list-md">
+  <div class="layout row wrap">
+    <div class="flex xs12">
+      <div class="v-card v-sheet theme--light">
+        <div class="v-card__title red darken-3 white--text subheading v-card__title--primary"><span class="title">Oops!</span></div>
+        <div class="v-card__text">
+          Looks like you're in uncharted territory. We don't know about this page yet. Luckily, we know the way back.
+        </div>
+        <div class="v-card__actions"><a href="#/" class="info v-btn--active v-btn v-btn--flat v-btn--router theme--light">
+            <div class="v-btn__content">Back</div>
+          </a></div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
