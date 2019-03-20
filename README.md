@@ -10,17 +10,12 @@ yarn install
 
 ### Compiles and hot-reloads for development
 ```
-yarn run serve
+yarn serve
 ```
 
 ### Compiles and minifies for production
 ```
-yarn run build
-```
-
-### Run your tests
-```
-yarn run test
+yarn build
 ```
 
 ### Lints and fixes files
@@ -28,12 +23,12 @@ yarn run test
 yarn run lint
 ```
 
-### Run your end-to-end tests
-```
-yarn test:e2e --headless
-```
-
 ### Run your unit tests
 ```
 yarn test:unit
+```
+
+### Run your end-to-end tests
+```
+yarn test:e2e --headless
 ```
