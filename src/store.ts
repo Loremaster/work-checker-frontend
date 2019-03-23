@@ -10,6 +10,9 @@ Vue.use(Vuex);
 export const initialState: IStore = {
   token: null,
   error: null,
+  user: {
+    role: null,
+  },
 };
 
 export default new Vuex.Store({
