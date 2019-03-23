@@ -25,11 +25,15 @@ import { Action, Getter } from "vuex-class";
 @Component
 export default class App extends Vue {
   @Action("setToken") setToken: any;
+  @Action("setUserRole") setUserRole: any;
   @Action("signOut") signOut: any;
+
   @Getter("token") token!: string | null;
 
   created() {
-    this.setToken(); // set store value after refresh
+    // set store values after refresh
+    this.setToken();
+    this.setUserRole();
   }
 }
 </script>

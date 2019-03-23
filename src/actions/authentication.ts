@@ -11,10 +11,12 @@ const authenticate = async (
 
     localStorage.setItem("token", token);
     commit("setToken", token);
+    commit("setUserRole", token);
     commit("setError", null);
   } catch (e) {
     localStorage.removeItem("token");
     commit("setToken", null);
+    commit("setUserRole", null);
     commit("setError", e);
     throw e;
   }
@@ -25,13 +27,20 @@ const setToken = ({ commit }: { commit: Commit }) => {
   commit("setToken", token);
 };
 
+const setUserRole = ({ commit }: { commit: Commit }) => {
+  const token = localStorage.getItem("token");
+  commit("setUserRole", token);
+};
+
 const signOut = ({ commit }: { commit: Commit }) => {
   localStorage.removeItem("token");
   commit("setToken", null);
+  commit("setUserRole", null);
 };
 
 export default {
   authenticate,
   setToken,
+  setUserRole,
   signOut,
 };
