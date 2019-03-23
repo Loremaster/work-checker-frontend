@@ -21,11 +21,13 @@ describe("Authentication.vue", () => {
 
   it("renders correctly", () => {
     const wrapper = setup();
+
     expect(wrapper).toMatchSnapshot();
   });
 
   it("contains text about 404", () => {
     const wrapper = setup();
+
     expect(wrapper.text()).toContain("We don't know about this page yet");
   });
 
