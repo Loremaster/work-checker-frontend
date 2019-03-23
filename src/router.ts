@@ -5,7 +5,7 @@ import Home from "./views/Home.vue";
 
 Vue.use(Router);
 
-export default new Router({
+const router = new Router({
   mode: "history",
   base: process.env.BASE_URL,
   routes: [
@@ -22,3 +22,23 @@ export default new Router({
     },
   ],
 });
+
+// Allow users to access routes based on role and authentication requirement.
+router.beforeEach((to, from, next) => {
+  if (to.meta.auth) {
+    const token = window.localStorage.getItem("token");
+    const userRole = window.localStorage.getItem("userRole");
+
+    if (!token) {
+      return next({ name: "authentication" });
+    } else if (!to.meta.roles.includes(userRole)) {
+      return next({ name: "home" });
+    }
+
+    next();
+  } else {
+    next();
+  }
+});
+
+export default router;
