@@ -17,7 +17,7 @@ let wrapper: any;
 
 describe("App.vue", () => {
   beforeEach(() => {
-    actions = { fetchToken: jest.fn(), signOut: jest.fn() };
+    actions = { setToken: jest.fn(), signOut: jest.fn() };
     getters = { token: jest.fn() };
   });
 
@@ -35,9 +35,9 @@ describe("App.vue", () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it("fetches token on page load", () => {
+  it("sets token on page load", () => {
     setup();
-    expect(actions.fetchToken).toHaveBeenCalled();
+    expect(actions.setToken).toHaveBeenCalled();
   });
 
   it("renders button to sign in when user is not authenticated", () => {
