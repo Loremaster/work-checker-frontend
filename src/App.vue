@@ -24,12 +24,12 @@ import { Action, Getter } from "vuex-class";
 
 @Component
 export default class App extends Vue {
-  @Action("fetchToken") fetchToken: any;
+  @Action("setToken") setToken: any;
   @Action("signOut") signOut: any;
   @Getter("token") token!: string | null;
 
   created() {
-    this.fetchToken(); // set store value after refresh
+    this.setToken(); // set store value after refresh
   }
 }
 </script>

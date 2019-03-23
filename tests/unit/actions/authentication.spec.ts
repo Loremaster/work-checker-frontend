@@ -68,12 +68,12 @@ describe("authenticate", () => {
   });
 });
 
-describe("fetchToken", () => {
+describe("setToken", () => {
   it("calls mutation to set token", () => {
     const token = "token value";
     localStorage.setItem("token", token);
 
-    actions.fetchToken({ commit });
+    actions.setToken({ commit });
 
     expect(commit).toHaveBeenCalledWith("setToken", token);
   });

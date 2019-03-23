@@ -20,7 +20,7 @@ const authenticate = async (
   }
 };
 
-const fetchToken = ({ commit }: { commit: Commit }) => {
+const setToken = ({ commit }: { commit: Commit }) => {
   const token = localStorage.getItem("token");
   commit("setToken", token);
 };
@@ -32,6 +32,6 @@ const signOut = ({ commit }: { commit: Commit }) => {
 
 export default {
   authenticate,
-  fetchToken,
+  setToken,
   signOut,
 };
