@@ -10,12 +10,14 @@ describe("Authentication.vue", () => {
 
   it("renders correctly", () => {
     const wrapper = setup();
+
     expect(wrapper).toMatchSnapshot();
   });
 
   it("renders Signin component", () => {
     const wrapper = setup();
     const signin = wrapper.find(Signin);
+
     expect(signin.is(Signin)).toEqual(true);
   });
 });

@@ -38,6 +38,7 @@ describe("Signin.vue", () => {
 
   it("renders correctly", () => {
     setup();
+
     expect(wrapper).toMatchSnapshot();
   });
 
