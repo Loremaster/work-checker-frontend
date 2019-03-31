@@ -10,8 +10,10 @@ const errorMessage = (state: IStore): string => {
     return "";
   }
 };
+const signedIn = (state: IStore): boolean => typeof state.token === "string";
 
 export default {
   token,
   errorMessage,
+  signedIn,
 };

@@ -20,6 +20,12 @@ const router = new Router({
       name: "authentication",
       component: () => import(/* webpackChunkName: "authentication" */ "./views/Authentication.vue"),
     },
+    {
+      path: "/users",
+      name: "users",
+      component: () => import(/* webpackChunkName: "users" */ "./views/Users.vue"),
+      meta: { auth: true, roles: ["admin"] },
+    },
   ],
 });
 

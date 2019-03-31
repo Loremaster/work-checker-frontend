@@ -30,7 +30,7 @@ jobs:
             - node_modules
           key: v1-1-dependencies-{{ checksum "package.json" }}
 
-      - run: yarn test:unit
+      - run: yarn test:unit --maxWorkers=2
   integration:
     docker:
       - image: circleci/node:11.6-browsers

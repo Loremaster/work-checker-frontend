@@ -2,6 +2,7 @@ import { mount, createLocalVue } from "@vue/test-utils";
 import Vuetify from "vuetify";
 import Vue from "vue";
 import Vuex from "vuex";
+import flushPromises from "flush-promises";
 import Component from "@/App.vue";
 
 const localVue = createLocalVue();
@@ -18,53 +19,70 @@ let wrapper: any;
 describe("App.vue", () => {
   beforeEach(() => {
     actions = { setToken: jest.fn(), setUserRole: jest.fn(), signOut: jest.fn() };
-    getters = { token: jest.fn() };
+    getters = { signedIn: jest.fn() };
   });
 
-  const setup = () => {
+  const setup = async () => {
     store = new Vuex.Store({ actions, getters });
     wrapper = mount(Component, {
       store,
       localVue,
       stubs: ["notifications", "router-link", "router-view"],
     });
+
+    await flushPromises();
+
+    return wrapper;
   };
 
-  it("renders correctly", () => {
-    setup();
+  it("renders correctly", async () => {
+    await setup();
 
     expect(wrapper).toMatchSnapshot();
   });
 
-  it("sets token on page load", () => {
-    setup();
+  it("sets token on page load", async () => {
+    await setup();
 
     expect(actions.setToken).toHaveBeenCalled();
   });
 
-  it("sets user's role on page load", () => {
-    setup();
+  it("sets user's role on page load", async () => {
+    await setup();
 
     expect(actions.setUserRole).toHaveBeenCalled();
   });
 
-  it("renders button to sign in when user is not authenticated", () => {
-    getters = { token: jest.fn().mockReturnValue(null) };
-    setup();
-    const button = wrapper.findAll(".v-btn__content").at(1);
+  describe("user is not signed in", () => {
+    it("renders button to sign in", async () => {
+      getters = { signedIn: jest.fn().mockReturnValue(false) };
+      await setup();
+      const button = wrapper.findAll(".v-btn__content").at(1);
 
-    expect(button.text()).toEqual("Sign in");
+      expect(button.text()).toEqual("Sign in");
+    });
   });
 
-  it("let user sign out when authenticated", () => {
-    getters = { token: jest.fn().mockReturnValue("token") };
-    setup();
-    const button = wrapper.findAll(".v-btn__content").at(1);
+  describe("user signed in", () => {
+    beforeEach(async () => {
+      getters = { signedIn: jest.fn().mockReturnValue(true) };
+      await setup();
+    });
 
-    expect(button.text()).toEqual("Sign out");
+    it("renders button the the list of users", () => {
+      const button = wrapper.findAll(".v-btn__content").at(1);
 
-    button.trigger("click");
+      expect(button.text()).toEqual("Users");
+    });
 
-    expect(actions.signOut).toHaveBeenCalled();
+    it("let user sign out", () => {
+      const button = wrapper.findAll(".v-btn__content").at(2);
+
+      expect(button.text()).toEqual("Sign out");
+
+      button.trigger("click");
+
+      expect(actions.signOut).toHaveBeenCalled();
+    });
   });
 });

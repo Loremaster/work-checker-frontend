@@ -4,4 +4,12 @@ export interface IStore {
   user: {
     role: string | null;
   };
+
+  users?: IUserList[];
+}
+
+export interface IUserList {
+  id: number;
+  role: string;
+  email: string;
 }
