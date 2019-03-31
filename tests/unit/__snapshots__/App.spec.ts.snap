@@ -11,11 +11,10 @@ exports[`App.vue renders correctly 1`] = `
           <router-link-stub class="v-btn v-btn--flat v-btn--router theme--light">
             <div class="v-btn__content">Home</div>
           </router-link-stub>
-          <router-link-stub class="v-btn v-btn--flat v-btn--router theme--light">
-            <div class="v-btn__content">Sign in</div>
-          </router-link-stub>
           <!---->
-          <!---->
+          <!----> <button type="button" class="v-btn v-btn--flat theme--light">
+            <div class="v-btn__content">Sign out</div>
+          </button>
         </div>
       </div>
     </nav>
