@@ -8,7 +8,7 @@
       <v-toolbar-items>
         <v-btn flat to="/">Home</v-btn>
         <v-btn v-if="!signedIn" flat to="/signin">Sign in</v-btn>
-        <v-btn v-if="signedIn" flat to="/users">Users</v-btn>
+        <v-btn v-if="signedIn && isAdmin" flat to="/users">Users</v-btn>
         <v-btn v-if="signedIn" flat @click="signOut">Sign out</v-btn>
       </v-toolbar-items>
     </v-toolbar>
@@ -31,6 +31,7 @@ export default class App extends Vue {
   @Action("signOut") signOut: any;
 
   @Getter("signedIn") signedIn!: boolean;
+  @Getter("isAdmin") isAdmin!: boolean;
 
   async created() {
     // set store values after refresh

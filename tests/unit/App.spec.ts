@@ -19,7 +19,7 @@ let wrapper: any;
 describe("App.vue", () => {
   beforeEach(() => {
     actions = { setToken: jest.fn(), setUserRole: jest.fn(), signOut: jest.fn() };
-    getters = { signedIn: jest.fn() };
+    getters = { signedIn: () => true, isAdmin: () => false };
   });
 
   const setup = async () => {
@@ -55,7 +55,7 @@ describe("App.vue", () => {
 
   describe("user is not signed in", () => {
     it("renders button to sign in", async () => {
-      getters = { signedIn: jest.fn().mockReturnValue(false) };
+      getters = { signedIn: () => false };
       await setup();
       const button = wrapper.findAll(".v-btn__content").at(1);
 
@@ -65,24 +65,31 @@ describe("App.vue", () => {
 
   describe("user signed in", () => {
     beforeEach(async () => {
-      getters = { signedIn: jest.fn().mockReturnValue(true) };
+      getters = { signedIn: () => true, isAdmin: () => false };
       await setup();
     });
 
-    it("renders button the the list of users", () => {
-      const button = wrapper.findAll(".v-btn__content").at(1);
-
-      expect(button.text()).toEqual("Users");
-    });
-
     it("let user sign out", () => {
-      const button = wrapper.findAll(".v-btn__content").at(2);
+      const button = wrapper.findAll(".v-btn__content").at(1);
 
       expect(button.text()).toEqual("Sign out");
 
       button.trigger("click");
 
       expect(actions.signOut).toHaveBeenCalled();
+    });
+  });
+
+  describe("admin signed in", () => {
+    beforeEach(async () => {
+      getters = { signedIn: () => true, isAdmin: () => true };
+      await setup();
+    });
+
+    it("let to see list of users", () => {
+      const button = wrapper.findAll(".v-btn__content").at(1);
+
+      expect(button.text()).toEqual("Users");
     });
   });
 });
