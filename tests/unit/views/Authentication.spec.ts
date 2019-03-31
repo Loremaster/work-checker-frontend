@@ -1,5 +1,4 @@
-import { shallowMount, createLocalVue } from "@vue/test-utils";
-import Vue from "vue";
+import { shallowMount } from "@vue/test-utils";
 import Component from "@/views/Authentication.vue";
 import Signin from "@/components/Signin.vue";
 
