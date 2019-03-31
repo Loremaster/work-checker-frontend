@@ -5,14 +5,18 @@ exports[`App.vue renders correctly 1`] = `
   <div class="application--wrap">
     <nav class="v-toolbar v-toolbar--fixed theme--light" style="margin-top: 0px; padding-right: 0px; padding-left: 0px; transform: translateY(0px);">
       <div class="v-toolbar__content" style="height: 64px;">
-        <div class="v-toolbar__title headline text-uppercase"><span>Vuetify</span> <span class="font-weight-light">MATERIAL DESIGN</span></div>
+        <div class="v-toolbar__title headline text-uppercase"><span>VV</span></div>
         <div class="spacer"></div>
-        <router-link-stub class="v-btn v-btn--router theme--light">
-          <div class="v-btn__content">Home</div>
-        </router-link-stub> |
-        <router-link-stub class="v-btn v-btn--router theme--light">
-          <div class="v-btn__content">Sign in</div>
-        </router-link-stub>
+        <div class="v-toolbar__items">
+          <router-link-stub class="v-btn v-btn--flat v-btn--router theme--light">
+            <div class="v-btn__content">Home</div>
+          </router-link-stub>
+          <router-link-stub class="v-btn v-btn--flat v-btn--router theme--light">
+            <div class="v-btn__content">Sign in</div>
+          </router-link-stub>
+          <!---->
+          <!---->
+        </div>
       </div>
     </nav>
     <main class="v-content" style="padding: 64px 0px 0px 0px;">

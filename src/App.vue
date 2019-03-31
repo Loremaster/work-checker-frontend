@@ -2,13 +2,15 @@
   <v-app>
     <v-toolbar app>
       <v-toolbar-title class="headline text-uppercase">
-        <span>Vuetify</span>
-        <span class="font-weight-light">MATERIAL DESIGN</span>
+        <span>VV</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn to="/">Home</v-btn> |
-      <v-btn v-if="!token" to="/signin">Sign in</v-btn>
-      <v-btn v-else @click="signOut">Sign out</v-btn>
+      <v-toolbar-items>
+        <v-btn flat to="/">Home</v-btn>
+        <v-btn v-if="!signedIn" flat to="/signin">Sign in</v-btn>
+        <v-btn v-if="signedIn" flat to="/users">Users</v-btn>
+        <v-btn v-if="signedIn" flat @click="signOut">Sign out</v-btn>
+      </v-toolbar-items>
     </v-toolbar>
 
     <v-content>
@@ -28,11 +30,11 @@ export default class App extends Vue {
   @Action("setUserRole") setUserRole: any;
   @Action("signOut") signOut: any;
 
-  @Getter("token") token!: string | null;
+  @Getter("signedIn") signedIn!: boolean;
 
-  created() {
+  async created() {
     // set store values after refresh
-    this.setToken();
+    await this.setToken();
     this.setUserRole();
   }
 }

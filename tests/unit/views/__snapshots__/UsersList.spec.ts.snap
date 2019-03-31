@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Authentication.vue renders correctly 1`] = `
+<v-container-stub tag="div" fluid="" fill-height="">
+  <v-layout-stub tag="div" align-center="" justify-center="">
+    <v-flex-stub tag="div" xs12="" sm10="" md10="">
+      <users-list-stub></users-list-stub>
+    </v-flex-stub>
+  </v-layout-stub>
+</v-container-stub>
+`;
