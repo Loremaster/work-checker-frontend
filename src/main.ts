@@ -15,11 +15,21 @@ Vue.config.productionTip = false;
 
 axios.defaults.baseURL = `${process.env.VUE_APP_BACKEND_URL}/api/v1/`;
 
-const token = localStorage.getItem("token");
+axios.interceptors.request.use(
+  config => {
+    let token = localStorage.getItem("token");
 
-if (token) {
-  axios.defaults.headers.common["Authorization"] = token;
-}
+    if (token) {
+      config.headers["Authorization"] = token;
+    }
+
+    return config;
+  },
+
+  error => {
+    return Promise.reject(error);
+  },
+);
 
 new Vue({
   router,
