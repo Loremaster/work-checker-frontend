@@ -10,6 +10,7 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
+    "incremental": true,
     "baseUrl": ".",
     "types": [
       "webpack-env",
