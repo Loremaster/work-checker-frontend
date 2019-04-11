@@ -7,4 +7,10 @@ export default {
         .then(resolve)
         .catch(reject);
     }),
+  createUser: ({ email, password, role }: { email: string; password: string; role: string }) =>
+    new Promise((resolve, reject) => {
+      loadMockData("users/createUser")
+        .then(resolve)
+        .catch(reject);
+    }),
 };
