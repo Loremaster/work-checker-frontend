@@ -5,7 +5,7 @@ export const loadMockData = (fileName: string): Promise<any> =>
   new Promise((resolve, reject) => {
     const dirPath: string = path.join(__dirname, "/__mockData__");
 
-    fs.readFile(`${dirPath}/${fileName}.json`, "utf8", (err: NodeJS.ErrnoException, data: string) => {
+    fs.readFile(`${dirPath}/${fileName}.json`, "utf8", (err: NodeJS.ErrnoException | null, data: string) => {
       if (err) {
         reject(err);
       }
