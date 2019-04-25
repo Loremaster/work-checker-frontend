@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Authentication.vue renders correctly 1`] = `
+<v-container-stub tag="div" grid-list-md="">
+  <v-layout-stub tag="div" row="" wrap="">
+    <v-flex-stub tag="div" md2="" offset-md10="" class="text-xs-right">
+      <v-btn-stub color="primary" activeclass="v-btn--active" tag="button" type="button" class="mr-0">
+        Add user
+      </v-btn-stub>
+    </v-flex-stub>
+    <!---->
+    <v-flex-stub tag="div" md12="">
+      <users-list-stub></users-list-stub>
+    </v-flex-stub>
+  </v-layout-stub>
+</v-container-stub>
+`;
